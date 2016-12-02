@@ -1,6 +1,6 @@
 <?php
   function call($controller, $action) {
-    require_once('controllers/' . $controller . '_controller.php');
+    require_once('controllers/' . $controller . 'Controller.php');
 
     switch($controller) {
       case 'pages':
@@ -8,7 +8,7 @@
       break;
       case 'posts':
         // we need the model to query the database later in the controller
-        require_once('models/post.php');
+        require_once('models/Post.php');
         $controller = new PostsController();
       break;
     }
